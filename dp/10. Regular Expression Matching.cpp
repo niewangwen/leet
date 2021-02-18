@@ -21,7 +21,8 @@ public:
                     // if * means 2 or more appearance of its preceding letter, 
                     //      first of all, we need to check if the preceding letter equals to s[j - 1]: p[j - 2] == s[i - 1] || p[j - 2] == '.'
                     //      secondly, if the first step is true, it means s[i - 1] IS PART OF 'preceding letter + *',
-                    //                then, we need to check IF s[i - 2] IS PART OF 'preceding letter + *', AND THIS STEP IS RECURSIVELY, SO WE ONLY NEED dp[i - 1][j]
+                    //                then, we need to check IF s[i - 2] IS PART OF 'preceding letter + *', 
+                    //                AND THIS STEP IS RECURSIVELY, SO WE ONLY NEED dp[i - 1][j]
                     dp[i][j] = (j >= 2 && dp[i][j - 2]) || dp[i][j - 1] || (dp[i - 1][j] && (p[j - 2] == s[i - 1] || p[j - 2] == '.'));
                 }
                 else if (p[j - 1] == '.') {
