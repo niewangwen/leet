@@ -5,7 +5,7 @@ public:
         sort(g.begin(), g.end());
         sort(s.begin(), s.end());
         int res = 0, i = 0, j = 0;
-        //strategy: for each child with g[i], assign the cookie(s[i]) which is JUST larger than g[i] to him/her
+        //strategy: for each child with g[i], assign the cookie(s[j]) which is JUST larger than g[i] to him/her
         while (i < g.size() && j < s.size()) {
             if (s[j] >= g[i]) {
                 res++;
