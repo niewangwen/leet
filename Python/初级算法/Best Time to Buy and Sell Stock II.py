@@ -20,4 +20,4 @@ class Solution(object):
             if prices[i]>prices[i-1]:
                 profit=profit+(prices[i]-prices[i-1])
         return profit
-![贪心解析](https://github.com/niewangwen/leet/blob/main/Python/%E5%88%9D%E7%BA%A7%E7%AE%97%E6%B3%95/%E6%88%AA%E5%B1%8F2021-03-17%20%E4%B8%8B%E5%8D%881.25.54.png）
+
