@@ -10,7 +10,11 @@
     
     ` 如果题目本身就是void，要求在原数组上进行修改，那么递归函数的返回值最好设置为bool，因为这样可以通过return true of false判断这次递归是对还是错，如果是错，则可提供依据修正一开始对原数组的修改；如果仍然是void，则不好判断此次递归是对还是错的`  （比如$\color{red}{37. Sudoku Solver}$）
 
-4.  dfs/递归通式
+4. !!!注意!!! 递归当中：for循环一般都是遍历所有的，在这层递归中可能出现的值，所以一般遍历candidates
+      
+   有的candidates是题目的入口(39, Combination Sum)；而有的则是自己设定，题目的入口仅仅是告诉你递归最深有多少层（17. Letter Combination of Phone Number）
+
+5.  dfs/递归通式
 
     ```cpp
     Interface(arrays, target) {
@@ -26,8 +30,7 @@
     dfs(xxx) {
       if (判断条件: cur_value == target || cur_position == arrays.size() || meet other restriction)
         do something
-      !!!注意!!! for循环一般都是遍历所有的，在这层递归中可能出现的值，所以一般遍历candidates
-      有的candidates是题目的入口(39, Combination Sum)；而有的则是自己设定，题目的入口仅仅是告诉你递归最深有多少层（17. Letter Combination of Phone Number）
+      
       for (当前的所有情况) {
         对原有数据做出改变
         dfs(传入被改变的数据)
@@ -36,7 +39,7 @@
     }
     ```
     
-5. bfs通式
+6. bfs通式
 
    ```cpp
    queue<> q;
@@ -54,7 +57,7 @@
    }
    ```
    
-6. bfs构造的层序遍历
+7. bfs构造的层序遍历
 
    与bfs的区别在于，bfs每次都把相邻的点放入queue，直至遍历到所有点/达到题目条件
    bfs的层序是要得到每一层的信息(比如有几层)，所以需要作出改变
