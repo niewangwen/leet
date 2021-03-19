@@ -26,6 +26,8 @@
     dfs(xxx) {
       if (判断条件: cur_value == target || cur_position == arrays.size() || meet other restriction)
         do something
+      !!!注意!!! for循环一般都是遍历所有的，在这层递归中可能出现的值，所以一般遍历candidates
+      有的candidates是题目的入口(39, Combination Sum)；而有的则是自己设定，题目的入口仅仅是告诉你递归最深有多少层（17. Letter Combination of Phone Number）
       for (当前的所有情况) {
         对原有数据做出改变
         dfs(传入被改变的数据)
